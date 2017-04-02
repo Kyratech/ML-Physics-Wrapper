@@ -1,5 +1,5 @@
 #define TINYOBJLOADER_IMPLEMENTATION
-#include "tiny_obj_loader.h"
+#include "include/TinyOBJLoader/tiny_obj_loader.h"
 
 #ifdef TINYOBJLOADER_IMPLEMENTATION
 #include <cassert>

@@ -8,5 +8,5 @@ solution ('SimplePhysicsWrapper') --Top Level name of the project
         kind 'StaticLib' -- the target application
         targetdir('./lib') -- where to put the executable
 		links{'libBulletDynamics', 'libBulletCollision', 'libLinearMath'}
-        files {"SimpleBulletWrapper/*.cpp"} -- collects all the cpp files in the directory, there must only be one main function.
+        files {"SimpleBulletWrapper/*.cpp", "SimpleBulletWrapper/*.cc"} -- collects all the cpp and cc files in the directory, there must only be one main function.
         buildoptions{'-Wno-write-strings'} -- build option to suppress a very common warning  about strings

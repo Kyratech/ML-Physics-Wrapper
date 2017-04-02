@@ -1,10 +1,10 @@
 --
 -- see https://premake.github.io/ for explanations of these commands.
 --
-solution ('SimpleBulletWrapper') --Top Level name of the project
+solution ('SimplePhysicsWrapper') --Top Level name of the project
    configurations { 'Release' }
       language 'C++' -- The programming language
-      project("BulletWrapper") -- The specific name
+      project("PhysicsWrapper") -- The specific name
         kind 'StaticLib' -- the target application
         targetdir('./lib') -- where to put the executable
 		links{'libBulletDynamics', 'libBulletCollision', 'libLinearMath'}

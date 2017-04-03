@@ -23,31 +23,6 @@ class PhysicsUtilities
 {
 public:
 	/*
-	* Takes angles in radians
-	* Order of application of rotations is:
-	* YAW	-	Y (UP)
-	* PITCH	-	Z
-	* ROLL	-	X (FRONT)
-	*/
-	static glm::vec4 EulerToQuaternion(glm::vec3 eulerValues)
-	{
-		double cYaw = cos(eulerValues.y / 2.0);
-		double sYaw = sin(eulerValues.y / 2.0);
-		double cPitch = cos(eulerValues.z / 2.0);
-		double sPitch = sin(eulerValues.z / 2.0);
-		double cRoll = cos(eulerValues.x / 2.0);
-		double sRoll = sin(eulerValues.x / 2.0);
-
-		glm::vec4 quat;
-		quat.w = cYaw * cPitch * cRoll - sYaw * sPitch * sRoll;
-		quat.x = cYaw * cPitch * sRoll + sYaw * sPitch * cRoll;
-		quat.y = sYaw * cPitch * cRoll + cYaw * sPitch * sRoll;
-		quat.z = cYaw * sPitch * cRoll - sYaw * cPitch * sRoll;
-
-		return quat;
-	}
-
-	/*
 	 * Construct a rigid body from some passed parameters - avoids reused code when setting up different physics objects
 	 */
 	static btRigidBody* constructRigidBody(btCollisionShape* cShape, btMotionState* mState, bool dynamic, float mass)

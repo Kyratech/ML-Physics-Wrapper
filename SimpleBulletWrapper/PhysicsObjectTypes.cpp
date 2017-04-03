@@ -45,9 +45,8 @@ void PhysicsBox::construct(bool dynamic, float depth, float height, float width,
 	{
 		initialOrientationXYZ = glm::vec3(glm::radians(initialOrientationXYZ.x), glm::radians(initialOrientationXYZ.y), glm::radians(initialOrientationXYZ.z));
 	}
-	glm::vec4 rotationQuat = PhysicsUtilities::EulerToQuaternion(initialOrientationXYZ);
 
-	btDefaultMotionState* mState = new btDefaultMotionState(btTransform(btQuaternion(rotationQuat.w, rotationQuat.x, rotationQuat.y, rotationQuat.z), btVector3(initialPosition.x, initialPosition.y, initialPosition.z)));
+	btDefaultMotionState* mState = new btDefaultMotionState(btTransform(btQuaternion(initialOrientationXYZ.y, initialOrientationXYZ.x, initialOrientationXYZ.z), btVector3(initialPosition.x, initialPosition.y, initialPosition.z)));
 
 	btRigidBody* rBody = PhysicsUtilities::constructRigidBody(cShape, mState, dynamic, mass);
 
@@ -222,9 +221,8 @@ void PhysicsCone::construct(bool dynamic, float height, float baseRadius, float 
 	{
 		initialOrientationXYZ = glm::vec3(glm::radians(initialOrientationXYZ.x), glm::radians(initialOrientationXYZ.y), glm::radians(initialOrientationXYZ.z));
 	}
-	glm::vec4 rotationQuat = PhysicsUtilities::EulerToQuaternion(initialOrientationXYZ);
 
-	btDefaultMotionState* mState = new btDefaultMotionState(btTransform(btQuaternion(rotationQuat.w, rotationQuat.x, rotationQuat.y, rotationQuat.z), btVector3(initialPosition.x, initialPosition.y, initialPosition.z)));
+	btDefaultMotionState* mState = new btDefaultMotionState(btTransform(btQuaternion(initialOrientationXYZ.y, initialOrientationXYZ.x, initialOrientationXYZ.z), btVector3(initialPosition.x, initialPosition.y, initialPosition.z)));
 
 	btRigidBody* rBody = PhysicsUtilities::constructRigidBody(cShape, mState, dynamic, mass);
 
@@ -297,9 +295,8 @@ void PhysicsCylinder::construct(bool dynamic, float depth, float height, float w
 	{
 		initialOrientationXYZ = glm::vec3(glm::radians(initialOrientationXYZ.x), glm::radians(initialOrientationXYZ.y), glm::radians(initialOrientationXYZ.z));
 	}
-	glm::vec4 rotationQuat = PhysicsUtilities::EulerToQuaternion(initialOrientationXYZ);
 
-	btDefaultMotionState* mState = new btDefaultMotionState(btTransform(btQuaternion(rotationQuat.w, rotationQuat.x, rotationQuat.y, rotationQuat.z), btVector3(initialPosition.x, initialPosition.y, initialPosition.z)));
+	btDefaultMotionState* mState = new btDefaultMotionState(btTransform(btQuaternion(initialOrientationXYZ.y, initialOrientationXYZ.x, initialOrientationXYZ.z), btVector3(initialPosition.x, initialPosition.y, initialPosition.z)));
 
 	btRigidBody* rBody = PhysicsUtilities::constructRigidBody(cShape, mState, dynamic, mass);
 
@@ -375,9 +372,8 @@ void PhysicsCapsule::construct(bool dynamic, float radius, float height, float m
 	{
 		initialOrientationXYZ = glm::vec3(glm::radians(initialOrientationXYZ.x), glm::radians(initialOrientationXYZ.y), glm::radians(initialOrientationXYZ.z));
 	}
-	glm::vec4 rotationQuat = PhysicsUtilities::EulerToQuaternion(initialOrientationXYZ);
 
-	btDefaultMotionState* mState = new btDefaultMotionState(btTransform(btQuaternion(rotationQuat.w, rotationQuat.x, rotationQuat.y, rotationQuat.z), btVector3(initialPosition.x, initialPosition.y, initialPosition.z)));
+	btDefaultMotionState* mState = new btDefaultMotionState(btTransform(btQuaternion(initialOrientationXYZ.y, initialOrientationXYZ.x, initialOrientationXYZ.z), btVector3(initialPosition.x, initialPosition.y, initialPosition.z)));
 
 	btRigidBody* rBody = PhysicsUtilities::constructRigidBody(cShape, mState, dynamic, mass);
 
@@ -424,9 +420,8 @@ PhysicsConvexMesh::PhysicsConvexMesh(bool dynamic, std::string filename, float m
 	{
 		initialOrientationXYZ = glm::vec3(glm::radians(initialOrientationXYZ.x), glm::radians(initialOrientationXYZ.y), glm::radians(initialOrientationXYZ.z));
 	}
-	glm::vec4 rotationQuat = PhysicsUtilities::EulerToQuaternion(initialOrientationXYZ);
 
-	btDefaultMotionState* mState = new btDefaultMotionState(btTransform(btQuaternion(rotationQuat.w, rotationQuat.x, rotationQuat.y, rotationQuat.z), btVector3(initialPosition.x, initialPosition.y, initialPosition.z)));
+	btDefaultMotionState* mState = new btDefaultMotionState(btTransform(btQuaternion(initialOrientationXYZ.y, initialOrientationXYZ.x, initialOrientationXYZ.z), btVector3(initialPosition.x, initialPosition.y, initialPosition.z)));
 
 	btRigidBody* rBody = PhysicsUtilities::constructRigidBody(cShape, mState, dynamic, mass);
 
@@ -485,9 +480,8 @@ PhysicsConcaveMesh::PhysicsConcaveMesh(std::string filename, glm::vec3 position,
 	{
 		orientationXYZ = glm::vec3(glm::radians(orientationXYZ.x), glm::radians(orientationXYZ.y), glm::radians(orientationXYZ.z));
 	}
-	glm::vec4 rotationQuat = PhysicsUtilities::EulerToQuaternion(orientationXYZ);
 
-	btDefaultMotionState* mState = new btDefaultMotionState(btTransform(btQuaternion(rotationQuat.w, rotationQuat.x, rotationQuat.y, rotationQuat.z), btVector3(position.x, position.y, position.z)));
+	btDefaultMotionState* mState = new btDefaultMotionState(btTransform(btQuaternion(orientationXYZ.y, orientationXYZ.x, orientationXYZ.z), btVector3(position.x, position.y, position.z)));
 
 	btRigidBody* rBody = PhysicsUtilities::constructRigidBody(cShape, mState, false, 0);
 
